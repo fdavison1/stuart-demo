@@ -6,6 +6,11 @@
   flex-direction: column;
 }
 
+body {
+  background: black;
+
+}
+
 h1 {
   color: cyan;
   font-size: 7rem;
@@ -14,20 +19,34 @@ h1 {
   padding: 0;
 }
 
+h1:hover {
+  animation: spin 1.2s infinite;
+
+}
+
 p {
   /* border: solid red; */
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 img {
   width: 300px;
+  border-radius: 50%;
+  animation: spin 1.2s infinite;
 }
+
+
 
 .cats {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  /* border: solid red; */
+  width: 1200px;
 }
+
 
 button {
   transition: all 1s ease;
@@ -48,4 +67,29 @@ button:hover {
   width: 20rem;
   font-size: 4rem;
   border: 3px solid black;
+}
+/* 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+    
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+@keyframes spin {
+  0% {
+      transform: scale(1);
+  }
+  20% {
+      transform: scale(1.25);
+  }
+  25% {
+      transform: scale(1.1);
+  }
+  40% {
+      transform: scale(1.5);
+  }
 }
