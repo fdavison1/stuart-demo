@@ -1,26 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import Cat from './Cat'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends React.Component {
+  
+  state = {
+    cats : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    showCats: false,
+    showButton: true
+  }
+
+  showCats(){
+    // console.log('stuart')
+    this.setState({
+      showCats: true,
+      showButton: false
+    })
+  }
+  
+  render(){
+
+    return (
+      <div className="app">
+
+
+      <h1>Stuart</h1>
+      <p>A Website</p>
+
+{this.state.showCats &&
+      <div className='cats'>
+      {this.state.cats.map(cat => {
+        return <Cat />
+      })}
+      </div>}
+
+{this.state.showButton &&
+      <button
+      onClick={() => this.showCats()}
+      >show cats</button>
+}
+     
     </div>
   );
+}
 }
 
 export default App;
